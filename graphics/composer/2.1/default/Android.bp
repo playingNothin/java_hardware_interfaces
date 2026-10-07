@@ -1,5 +1,7 @@
 cc_binary {
     name: "android.hardware.graphics.composer@2.1-service",
+    // Moto G20 (java): stock Unisoc service blob replaces this HAL service
+    enabled: false,
     defaults: ["hidl_defaults"],
     vendor: true,
     relative_install_path: "hw",

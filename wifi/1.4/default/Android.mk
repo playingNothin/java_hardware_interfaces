@@ -78,6 +78,8 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
 include $(BUILD_STATIC_LIBRARY)
 
+# Moto G20 (java): the stock Unisoc wifi HAL service blob replaces these services
+ifeq ($(BOARD_NO_PLATFORM_WIFI_HAL),)
 ###
 ### android.hardware.wifi daemon
 ###
@@ -139,6 +141,7 @@ LOCAL_STATIC_LIBRARIES := \
     android.hardware.wifi@1.0-service-lib
 LOCAL_INIT_RC := android.hardware.wifi@1.0-service-lazy.rc
 include $(BUILD_EXECUTABLE)
+endif # BOARD_NO_PLATFORM_WIFI_HAL
 
 ###
 ### android.hardware.wifi unit tests.

@@ -169,6 +169,8 @@ cc_defaults {
 
 cc_binary {
     name: "android.hardware.camera.provider@2.4-service",
+    // Moto G20 (java): stock Unisoc service blob replaces this HAL service
+    enabled: false,
     defaults: ["camera_service_defaults"],
     compile_multilib: "32",
     init_rc: ["android.hardware.camera.provider@2.4-service.rc"],

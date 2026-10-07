@@ -63,6 +63,8 @@ cc_library_shared {
 // so there is no need to implement your own.
 cc_binary {
     name: "android.hardware.health@2.1-service",
+    // Moto G20 (java): stock Unisoc health service blob replaces this HAL service
+    enabled: false,
     vendor: true,
     defaults: ["android.hardware.health@2.1-impl-defaults"],
     init_rc: ["android.hardware.health@2.1-service.rc"],

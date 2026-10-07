@@ -1,5 +1,7 @@
 cc_binary {
     name: "android.hardware.audio.service",
+    // Moto G20 (java): stock Unisoc service blob replaces this HAL service
+    enabled: false,
 
     init_rc: ["android.hardware.audio.service.rc"],
     relative_install_path: "hw",
